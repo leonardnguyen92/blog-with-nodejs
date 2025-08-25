@@ -1,0 +1,104 @@
+<form class="row g-3 mt-3" method="post">
+  <div class="col-12">
+    <label for="titleCourse" class="form-label">
+      Tên khoá học:
+    </label>
+    <input type="text" class="form-control" name="title" id="titleCourse" required />
+  </div>
+  <div class="col-12">
+    <label for="descCourse" class="form-label">
+      Mô tả:
+    </label>
+    <textarea class="form-control" name="description" id="descCourse" rows="3" required></textarea>
+  </div>
+  <div class="col-12">
+    <label for="priceCourse" class="form-label">
+      Giá tiền
+    </label>
+    <input type="number" class="form-control" name="price" id="priceCourse" min="0" placeholder="500000" required />
+  </div>
+  <div class="col-12">
+    <label for="introVideo" class="form-label">
+      Video giới thiệu:
+    </label>
+    <input type="text" class="form-control" name="video" id="introVideo" placeholder="8YPgIOw43b0" required />
+  </div>
+  <div class="col-md-4">
+    <label for="lecturer" class="form-label">
+      Giảng viên:
+    </label>
+    <select id="lecturer" name="lecturer" class="form-select" required>
+      <option value="" disabled selected hidden>
+        Choose...
+      </option>
+      <option>
+        Giảng viên 1
+      </option>
+      <option>
+        Giảng viên 2
+      </option>
+    </select>
+  </div>
+  <div class="mb-3 row align-items-center">
+    <label class="col-sm-2 col-form-label">
+      Trạng thái:
+    </label>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline col-sm-2">
+        <input class="form-check-input" type="radio" name="isPublic" id="published" value="true" />
+        <label class="form-check-label" for="published">
+          Đã xuất bản
+        </label>
+      </div>
+      <div class="form-check form-check-inline col-sm-2">
+        <input class="form-check-input" type="radio" name="isPublic" id="unpublished" value="false" />
+        <label class="form-check-label" for="unpublished">
+          Chưa xuất bản
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-3 row align-items-center">
+    <label class="col-sm-2 col-form-label">
+      Trình độ:
+    </label>
+    <div class="col-sm-10">
+      <div class="form-check form-check-inline col-sm-2">
+        <input class="form-check-input" type="radio" name="radioLevel" id="isBeginner" value="beginner" />
+        <label class="form-check-label" for="isBeginner">
+          Nhập môn
+        </label>
+      </div>
+      <div class="form-check form-check-inline col-sm-2">
+        <input class="form-check-input" type="radio" name="radioLevel" id="isIntermediate" value="intermediate" />
+        <label class="form-check-label" for="isIntermediate">
+          Trung cấp
+        </label>
+      </div>
+      <div class="form-check form-check-inline col-sm-2">
+        <input class="form-check-input" type="radio" name="radioLevel" id="isAdvanced" value="advanced" />
+        <label class="form-check-label" for="isAdvanced">
+          Nâng cao
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <label for="inputTag" class="form-label">
+      Tag
+    </label>
+    <textarea type="text" class="form-control" name="tag" id="inputTag"></textarea>
+  </div>
+  <div class="col-12 text-center">
+    <button type="submit" class="btn btn-primary mx-2">
+      Create
+    </button>
+    <button type="reset" class="btn btn-warning mx-2">
+      Reset
+    </button>
+    <button type="button" class="btn btn-danger mx-2" onclick="window.location.href='/'">
+      Cancle
+    </button>
+  </div>
+</form>
