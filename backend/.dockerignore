@@ -1,0 +1,22 @@
+# Exclude node_modules (will be mounted as a volume or installed inside the container)
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Exclude cache and build outputs
+dist
+build
+.cache
+coverage
+
+# Exclude local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Exclude system files
+.DS_Store
+Thumbs.db

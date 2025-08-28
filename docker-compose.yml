@@ -25,7 +25,7 @@ services:
       - "3000:3000"
     volumes:
       - ./backend:/usr/src/app
-      - /usr/src/app/node_modules
+      - node_modules_cache:/usr/src/app/node_modules
     environment:
       - MONGO_URI=mongodb://mongo:27017/mycourses
       - REDIS_HOST=redis
@@ -44,3 +44,6 @@ services:
       - ./docker-data/MyCourses/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - backend
+
+volumes:
+  node_modules_cache:
