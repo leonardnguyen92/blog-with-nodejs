@@ -61,3 +61,48 @@ Thumbs.db
 *.swp
 *.bak
 *.orig
+
+# ============================
+# Node.js
+# ============================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs
+*.log
+logs/*
+
+# ============================
+# Docker
+# ============================
+# Docker local volumes
+docker-data/
+
+# Docker Compose override (dùng riêng cho dev, không push lên repo)
+docker-compose.override.yml
+
+# ============================
+# Build artifacts
+# ============================
+dist/
+build/
+.cache/
+.tmp/
+
+# ============================
+# IDE / Editor
+# ============================
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo

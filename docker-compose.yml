@@ -6,7 +6,8 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - ./docker-data/MyCourses/mongo:/data/db
+      - mongo_data:/data/db
+    command: ["mongod", "--quiet", "--logpath", "/dev/null"]
 
   # Redis
   redis:
@@ -15,21 +16,25 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ./docker-data/MyCourses/redis:/data
+      - redis_data:/data
 
   # Node backend
   backend:
     build: ./backend
     restart: unless-stopped
+    command: npm run start 
     ports:
       - "3000:3000"
+      - "9229:9229"
     volumes:
       - ./backend:/usr/src/app
       - node_modules_cache:/usr/src/app/node_modules
     environment:
-      - MONGO_URI=mongodb://mongo:27017/mycourses
+      - NODE_ENV=development
+      - MONGO_URI=mongodb://mongo:27017/MyCourses
       - REDIS_HOST=redis
       - REDIS_PORT=6379
+      - CHOKIDAR_USEPOLLING=1
     depends_on:
       - mongo
       - redis
@@ -41,9 +46,11 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./docker-data/MyCourses/nginx/conf.d:/etc/nginx/conf.d
+      - /home/myubuntu/docker-data/MyCourses/nginx/conf.d:/etc/nginx/conf.d
     depends_on:
       - backend
 
 volumes:
   node_modules_cache:
+  mongo_data:
+  redis_data:
