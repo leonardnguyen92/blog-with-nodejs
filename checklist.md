@@ -10,7 +10,7 @@
 | 8 | <p align="left">Sort middleware</p> | ❌ |
 | 9 | <p align="left">Autoincrement _id field</p> | ❌ |
 
-- [ x ] Course detail page
+- [x] Course detail page
 - [ ] CRUD Create new course
 - [ ] CRUD Update course
 - [ ] CRUD Delete course
