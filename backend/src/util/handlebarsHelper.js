@@ -1,6 +1,7 @@
 const Handlebars = require("handlebars");
 
 module.exports = {
+    sum: (a, b) => a + b,
     renderStars: function (rating) {
         const fullStars = Math.floor(rating);
         const halfStar = (rating - fullStars) >= 0.5 ? 1 : 0;
@@ -36,5 +37,18 @@ module.exports = {
             default:
                 return "";
         }
-    }
+    },
+    formatDate: function (date) {
+        if (!date) return '';
+        return date.toLocaleString('vi-VN', {
+            weekday: 'short',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    },
+    eq: (a, b) => a === b,
+    join: (arr, sep) => Array.isArray(arr) ? arr.join(sep) : arr,
 }

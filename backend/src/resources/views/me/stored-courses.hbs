@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Level</th>
+      <th scope="col">Time</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each course}}
+    <tr>
+      <th scope="row">{{{sum @index 1}}}</th>
+      <td>{{this.title}}</td>
+      <td>{{{showLevel this.level}}}</td>
+      <td>{{{formatDate this.createdAt}}}</td>
+      <td>
+        <a href="/courses/{{this._id}}/edit" class="btn btn-link">Edit</a>
+        <a href="" class="btn btn-link">Delete</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
